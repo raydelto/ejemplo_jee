@@ -16,7 +16,7 @@
 				</tr>
 				<tr>
 					<td>Clave:</td>
-					<td><input type="passsword" name="clave" /></td>
+					<td><input type="password" name="clave" /></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="center"><input type="submit" value="Iniciar sesión" /></td>

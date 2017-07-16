@@ -1,11 +1,14 @@
 package edu.itla.agenda.controladores;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import edu.itla.agenda.entidades.Usuario;
 
 /**
  * Servlet implementation class ControladorLogin
@@ -35,12 +38,14 @@ public class ControladorLogin extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String url = "";
+		Usuario usuario = new Usuario("tulile","Maikel","Cuevas","pasare@itla.edu.do");
 		if("tulile".equals(request.getParameter("usuario")) && 
 				"123".equals(request.getParameter("clave"))) {
 			url = "bienvenido.jsp";
 		}else {
 			url = "denegado.jsp";
 		}
+		request.setAttribute("usuario",usuario);
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 }
